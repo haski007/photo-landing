@@ -1,10 +1,10 @@
 let hostURL;
 
 // check if it's localhost or a domain
-if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+if (window.location.hostname === "localhost" && window.location.hostname === "127.0.0.1") {
     hostURL = 'http://localhost:8080';
 } else {
-    hostURL = process.env.SERVER_HOST_URL;
+    hostURL = "http://161.35.150.170:80";
 }
 
 // This would ideally be fetched from a cmd

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = ".";
+
+
+// The Bot service definition.
+service BotService {
+  // Sends a contact request.
+  rpc SendContactRequest (ContactRequest) returns (ContactResponse);
+}
+
+// The message containing user's name, email, and the contact message.
+message ContactRequest {
+  string name = 1;
+  string email = 2;
+  string message = 3;
+}
+
+// The response message containing the result of sending the contact request.
+message ContactResponse {
+  bool ok = 1;
+  repeated string errors = 2;
+}
+
+

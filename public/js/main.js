@@ -65,7 +65,6 @@ function getCurrentLanguage() {
 
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log("hello there")
 
     // Get the input values
     let name = document.getElementById('name').value;

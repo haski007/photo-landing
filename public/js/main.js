@@ -1,3 +1,12 @@
+let hostURL;
+
+// check if it's localhost or a domain
+if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    hostURL = 'http://localhost:8080';
+} else {
+    hostURL = process.env.SERVER_HOST_URL;
+}
+
 // This would ideally be fetched from a cmd
 const portfolioImages = [
     "/static/resources/style.jpg",
@@ -63,7 +72,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
 
-    fetch('http://localhost:8080/contact', {
+    fetch(hostURL + '/contact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
